@@ -24,7 +24,7 @@ import { replaceNoteLink } from './utils/markdown'
 
 // @unocss-include
 
-const baseUrl = process.env.GITHUB_ACTIONS ? '/edit' : '/'
+const baseUrl = process.env.GITHUB_ACTIONS ? '/fmhy/' : '/'
 export default defineConfig({
   title: 'FMHY',
   description: meta.description,
@@ -44,26 +44,34 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#7bc5e4' }],
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:locale', content: 'en' }],
-    ['link', { rel: 'icon', href: '/fmhy.ico' }],
+    ['link', { rel: 'icon', href: `${baseUrl}fmhy.ico` }],
     [
       'link',
       {
         rel: 'alternate',
         type: 'application/rss+xml',
         title: 'FMHY RSS Feed',
-        href: '/feed.rss'
+        href: `${baseUrl}feed.rss`
       }
     ],
     // PWA
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['link', { rel: 'manifest', href: `${baseUrl}manifest.json` }],
     [
       'link',
-      { rel: 'alternate icon', href: '/pwa_icon.png', type: 'image/png' }
+      {
+        rel: 'alternate icon',
+        href: `${baseUrl}pwa_icon.png`,
+        type: 'image/png'
+      }
     ],
     ['meta', { name: 'keywords', content: meta.keywords.join(' ') }],
     [
       'link',
-      { rel: 'apple-touch-icon', href: '/pwa_icon.png', sizes: '192x192' }
+      {
+        rel: 'apple-touch-icon',
+        href: `${baseUrl}pwa_icon.png`,
+        sizes: '192x192'
+      }
     ],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     [
